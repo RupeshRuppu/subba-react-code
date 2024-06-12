@@ -1,0 +1,14 @@
+#box {
+	width: 200px;
+	height: 200px;
+	background: brown;
+	margin: 10px;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}

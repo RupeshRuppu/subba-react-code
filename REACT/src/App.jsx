@@ -1,6 +1,24 @@
 import { useState } from 'react';
 import './App.css';
 
+function Child(props) {
+	const { count, setCount } = props;
+	return (
+		<>
+			<button
+				onClick={function () {
+					if (count <= 9) {
+						setCount(count + 1);
+					}
+				}}
+			>
+				Inc
+			</button>
+			<p id="my-p">count is {count}</p>
+		</>
+	);
+}
+
 function App() {
 	const [show, setShow] = useState(false);
 	const [count, setCount] = useState(0);
@@ -19,30 +37,9 @@ function App() {
 				<button id="remove">Remove</button>
 			</div>
 
-			<button
-				onClick={function () {
-					if (count <= 9) {
-						setCount(count + 1);
-					}
-				}}
-			>
-				Inc
-			</button>
-			<p id="my-p">count is {count}</p>
+			<Child count={count} setCount={setCount} />
 		</>
 	);
 }
 
 export default App;
-
-/*
-
-   useState
-   useEffect 
-   useRef
-   useReducer (Redux easy)
-
-   useMemo,
-   useCallBack
-
-*/
